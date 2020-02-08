@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+char name[50]; //ประกาศตัวแปร name เก็บได้ 50 อักขระ
+int main(){
+    printf("Enter name : ");
+    // fgets(name,50,stdin); // รับค่าแบบกำหนดจำนวนอักขระ และระบุชนิดตัวแปร
+    // getchar() //รับข้อมูลเป็นอักขระ 1 ตัว และกด enter ด้วย
+    gets(name); // รับค่าใส่ในตัวแปร name //ใส่ baekhyun
+    printf("name = %s/n", name); //name = baekhyun
+    int i =atoi(name); //แปลงค่า name เป็น integer
+    double d = atof(name); //แปลงค่า name เป็น float
+    long l = atol(name); // แปลงค่า name เป็น long
+    printf("i=%d",i); //i=0 //เมื่อเป็นตัวอักขระ เริ่มที่ 0 เสมอ
+    printf("d=%f",d); //0.000000
+    printf("l=%f",l); //0.000000
+puts (name); //baekhyun //นำค่าของ name ออกมาแสดงที่หน้าจอ
+putchar(97); // a //putchar()  คือ  ฟังก์ชันที่ใช้แสดงผลลัพธ์ทีละ  1  ตัวอักขระ ในที่นี้ 97 คือเลข ASCII ของตัว a
+}
+
+int found = 0;
+double d = 0.0;
+char c = '\0';//c คือ null character
+
+if( !found ){ //รับค่า i เข้ามา check ว่า ถ้า i ไม่เท่ากับ 0 จะแสดงข้อความ i==20
+    printf("i==20\n");
+}else if (i==30){//รับค่า i เข้ามา check ว่า ถ้า i เท่ากับ 30 จะแสดงข้อความ i==30
+    printf("i==30\n");
+}else{//รับค่า i เข้ามา check ว่า ถ้า i ไม่เท่ากับ 2 เงื่อนไขข้างบน จะแสดงข้อความ else
+    printf("else\n");
+}
+
+
+
+การใช้ Boolean
+    Boolean จะแสดงออกได้เพียง 1 = True หรือ 0 = False
+    เมื่อเจอ if-else ค่าที่ออกเป็น True จะไปทำในเงื่อนไข if  
+
