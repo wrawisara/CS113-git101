@@ -1,0 +1,67 @@
+pointer และ pass by reference
+
+
+คิดแบบ pass by reference
+#include <stdio.h>
+//void addTen(int *number, int n)
+void addTen(int number, int n)//นำค่า number และ n มาคิดใน fucntion
+{
+    // number = 00 //ตำแหน่ง
+    // i=0
+    // i=1 number+1 =04 //ตำแหน่ง00+1 = ตำแหน่ง 04(+ขนาด pointer)
+    for (int i=0;i<n i++) //วนลูปจน i = n-1
+    {
+        printf("addTen[%p] =%d\n",number+i,*(number+i));//แสดงค่า addTen[address ของ number+i] = ค่าที่อยู่ใน number+i
+        *(number+i) += 10; 
+    }
+   
+}
+
+int addTwenty(int *n){ //เอาค่าที่อยู่ในaddress ของ n มาคิด 
+    *n =*n + 20; //เปลี่ยนค่าที่pointer ชี้
+    return 1;
+}
+int main(){
+    int n = 5;
+    int number[] ={1, 2, 3, 4, 5};
+    addTen(number, n); //มี ค่าเท่ากับ addTen(&number[0], n);
+    for (int i = 0; i<n ; i++){
+        printf("[xp] = %d/n", &number[i], number[i]); //print ค่าตำแหน่งaddress ที่ pointer ชี้ = เลข 1 -5(เลขใน array)
+    }
+addTwenty(&n);
+printf("n =%d\n",n); //นำค่า n ใน addTwenty(&n) มาแสดงค่า เพราะใน fucntion เป็นการเปลี่ยนค่า ในตำแหน่งที่ pointer ชี้
+
+}
+
+คิดแบบ pass by value
+#include <stdio.h>
+void addTen(int *number,int n)//นำค่า number และ n มาคิดใน fucntion
+{
+    for (int i=0;i<n i++) //วนลูปจน i = n-1
+    {
+        printf("addTen[%p] =%d\n",number+i,*(number+i));//แสดงค่า addTen[address ของ number+i] = ค่าที่อยู่ใน number+i
+        *(number+i) += 10; 
+    }
+   
+}
+int addTwenty(int n)//copy ค่า n มาคิด
+{
+    n=+20;
+    return 1;
+
+}
+
+int main()
+{
+    int n =5;
+    int number[] = {1,2,3,4,5};
+    addTen(number,n);//ส่งค่า number และ n ไปที่ fucntion
+    for (int i =0; i<n; i++){
+        printf("[%p] = %din", number+i,"(number+i));
+    }
+    
+    addTwenty (n);
+    printf("n = %din",n);//ออก ค่า n =5 เพราะใน addTwenty (n) เป็นการ copy ค่าไปคิดเฉยๆ ไม่ได้เปลี่ยนค่าในตำแน่งนั้น
+
+}
+
