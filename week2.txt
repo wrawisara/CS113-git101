@@ -1,0 +1,38 @@
+ภาษา c 
+    ต้องกำหนดทุกครั้งว่าตัวแปรนั้นมี Type เป็นอะไร ex.float x= 1.0; x เป็นตัวแปรเก็บค่าทศนิยม
+    function ตัวแปรก็ต้องกำหนด ex.int main() 
+    ต้อง ใส่ ; ปิดคำสั่งทุกอันเสมอ
+    int %d เก็บจำนวนเต็ม -21000000 ถึง 21000000 
+        -short int %hd
+        -unsigned short int %hu
+        -long int %ld 4 byte
+        -long long int %lld 8 byte
+        -unsigned int %u 0-4 พันร้อยล้าน
+        -unsigned long long int %llu เก็บได้เยอะที่สุด
+    float %f
+        -double %lf เก็บได้มากกว่า float ปกติ
+        -long double %Lf
+    char ใช้เก็บตัวอักษร %c ใช้เก็บอักขระเดียว %s ใช้เก็บมากกว่า 1 ตัว
+        char = 1 byte = 8 bit = 2^8 =  0-255 ตัว
+        ex1.Char name [3] ='bak';//ใน [] เก็บตัวอักษรได้3 ตัว ถ้าเป็น []โล่งๆเก็บได้ 0-255 ตัว
+        ex2.char c ='a';
+                c = c + 'a';//run ออกเป็น -62 overflow เป็นเลข ASCII
+                c = 'a' +1;//=98
+
+ใช้ - o เปลี่ยนชื่อไฟล์
+    ชื่อเก่า.อ -o ชื่อใหม่.c
+
+
+#include <stdio.h>
+#define M_PI 3.14;
+#define while 20;
+int main()
+int a =10;//21009008 -21000000
+unsigned long long d = 400000000000;
+long long b = 100;
+char c ='a';
+char name[] ="kong"//ตัวแปร name เก็บค่า kong เป็นตัวแปรชนิด char
+float e = 01;
+double f = 45.00;
+printf("Hello Wolrd! In");
+printf("%d %llu%lf% %s ,a,d,f,s,name);//10 400000000000 45.000000 kong
