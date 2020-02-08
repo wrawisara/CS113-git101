@@ -1,0 +1,29 @@
+loop
+
+#include <stdio.h>
+#include <stdlib.h>
+
+การใช้ loop while
+int main(){
+    char name;
+    fgets(name,5,stdin)//รับค่า name เป็น char
+    int i = atoi(name);//แปลงค่า nameจาก char เป็น int และไปเก็บไว้ใน i
+    int count = 0;
+    while(count<i){ //วน loop ตั้งแต่ 0 ถึง (i-1)
+        printf("%d\n",i);
+        count++;//เพิ่มค่า 0+1=1 //1+1=2 //2+1=3 //บวก 1 ไปเรื่อยๆ
+    }
+
+}
+
+การใช้ loop for
+int main(){
+    char name;
+    fgets(name,5,stdin)//รับค่า name เป็น char
+    int i = atoi(name);//แปลงค่า nameจาก char เป็น int และไปเก็บไว้ใน i
+    int count = 0;
+    for(int j = 0;j<i;j++){//การใช้ for จะต้องใส่ ตัวเริ่มต้น เงื่อนไข และตัวเพิ่มรอบไว้ตั้งแต่แรก
+        printf("%d\n",i);
+    }
+
+}
