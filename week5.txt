@@ -1,0 +1,30 @@
+fucntion และ pass by value
+
+#include <stdio.h>
+int addTen(int x)// ชื่อ function ตัวแรกสุตต้องเป็นตัวพิมเล็ก
+{
+    x += 10;//ค่า x=30
+    return x;//คืนค่า x
+
+}
+
+int addTwenty() ;//ประกาศ ฟังชั่น โพโตรไทป
+
+int main()
+{
+
+    int x = 20;
+    int y = addTen(x);// copyค่า x ไปคิดที่ ฟังชั่นaddTen() และเก็บค่าไว้ใน y
+    printf("addTen = %d",y);//addTen = 30 //นำค่า y มาแสดงค่า ค่า y เป็นการเก็บข้อมูลใหม่ตัวแปรใหม่เลยไม่ใช่การเปลี่ยนข้อมูลในตัวแปรเดิม
+    printf("addTwenty = %d" ,addTwenty(x));//copyค่า x ไปคิดที่ ฟังชั่นaddTwenty() //addTwenty = 40 //แสดงบรรทัดนี้หลัง ฟังชั่นaddTwenty()
+
+
+}
+
+int addTwenty(int x){
+
+    x=x+20;//x=40
+    printf("x in addTwenty = %d\n",x); //x in addTwenty = 40 //แสดงบรรทัดนี้ก่อน ฟังชั่นหลักเพราะประกาศไว้ด้านบน แต่แสดงหลัง ฟังชั่นaddTen เพราะได้ประกาศไว้ก่อน
+    return x;//คืนค่า x=40กลับไปที่ ฟังชั่นหลัก
+
+}
