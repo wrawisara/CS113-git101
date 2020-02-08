@@ -1,0 +1,27 @@
+Git basic
+
+การ commit flie และอัพขึ้น git
+1.ติดตั้งโปรแกรม Git ลงบนเครื่องคอมพิวเตอร์
+2.ทำการตรวจสอบว่าโปรแกรมใช้งานได้หรือไม่ โดยใช้คำสั่ง git --version ถ้าดปรแกรมใช้งานได้จะขึ้น version ปัจุบัน โดย window ใช้ Command Prompt และ mac ใช้ Termina
+3.พิม โค้ด หรือ เนื้อหาลงใน visual studio code
+4.เซฟเป็นไฟล์ txt
+5.สร้างไฟล์.git เซฟในโฟลเดอร์ที่เซฟไฟล์ txt ด้วยคำสั่ง git init
+6.ทำการเช็ค สถานะของไฟล์ว่าใช้งานได้หรือไม่ ด้วยคำสั่ง git status ในหน้าต่าง Command Prompt ถ้าขึ้นชื่อไฟล์เป็นสีแดง แสดงว่ายังใช้งานไม่ได้
+7.เปิด mingw64 ขึ้นมาและรันคำสั่ง git add ชื่อไฟล์.txt 
+8.จากนั้นตรวจสอบสถานะของไฟล์ โดยใช้คำสั่ง git status หากขึ้นชื่อไฟล์.a เป็นสีเขียวแสดงว่าสามารถใช้งานได้แล้ว
+9.ทำการระบุตัวผู้ commit โดยตั้งค่าชื่อและอีเมล ดดยทำขั้นตอนนี้เพียงครั้งเดียว
+    ถ้าเป็นเครื่องสาธารณะ ให้ใช้คำสั่ง 
+        git config user.name "Your Name"
+	    git config user.email "yourmail@ku.th"
+    ถ้าเป็นเครื่องส่วนตัวให้ใช้คำสั่ง
+        git config --global user.name "Your Name"
+	    git config --global user.email "yourmail@ku.th"
+10.ทำการระบุ ข้อความเพื่อเป็นจุด check point ว่าเก็บอะไรไว้ที่ตำแหน่งนี้ โดยใช้คำสั่ง git commit -m "Add a.txt" (สามารถดูจุด check point ได้ที่คำสั่ง git log --all --decorate --oneline --graph
+)
+11.ทำการอัพโหลดลงบน github โดยสร้าง repository ใหม่และตั้งค่าเป็นสาธารณะ 
+12.ทำการเชื่อมเครื่อข่ายบนเว็บ github (เรียกว่า local repository  )กับคอมพิวเตอร์ของตัวเองด้วยคำสั่ง git remote add <ชื่อ remote เช่น origin> <git url>
+13.และอัพขึ้น github ด้วยคำสั่ง git push -u origin master
+
+
+
+
