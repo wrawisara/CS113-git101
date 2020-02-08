@@ -1,0 +1,47 @@
+array และ pointer
+
+
+#include <stdio.h>
+int main(){
+
+    int x = 100;
+    int b = 0144; // is 100 in #8
+    int c = 0x64; // is 100 #16
+    printf("x = %d\n",x);
+    printf("reference of x%lu\n",&x); // & ดึง address reference of x2686764 ฐาน#10
+    printf("reference of x%p\n",&x); // & ดึง address reference of x0028FF2C ฐาน#16
+    char input[100];
+    gets(input); //ส่ง address pointer รับค่า ตัวแปรธรรมดาเก็บค่า
+    printf("reference of input %p\n",input); // พิมแค่ชื่อของ array จะมาแค่ address ที่0 reference of input 0028FEC8
+    printf("reference of &input[0] %p\n",&input[0]); //reference of &input[0] 0028FEC8
+
+    int number[] = {1,2,3,4,5,};
+    number[100] = 3000;// เปลี่ยนค่า ที่อยู่ใน addressได้  แปลง memory ตัวอื่นได้
+    &number[100] = 3000;//เปลี่ยนค่า address ไม่ได้
+    printf("index 2 =%p\n",number[100]);//
+    printf("index 2 =%d\n",number[100]);
+
+    int *ptr = &x;// call pointer มี* เก็บ address
+    int *arrPtr = number;// pointer tell address only
+    ptr = x;//เปลี่ยนค่า address 
+    *ptr = 1000; //เปลี่ยนค่า ที่pointerชี้
+    arrPtr = number//ไม่มี * เก็บ address
+
+    int number[] = {1,2,3,4,5,};
+    input[100];
+    char input[100];
+    int count = 0;
+    char c;
+    while ((c=getchar() != '\n')
+    {
+        input[count] = c;
+        ++count;
+
+    }
+    printf("input[] = %s\n",input);
+    for(char *cPtr = input; ; cPtr++)
+    {
+        printf("%c\n",*cPtr);
+    }
+
+}
