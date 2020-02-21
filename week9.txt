@@ -1,0 +1,40 @@
+การสร้าง branch และการ clone
+1.git clone ลิงค์ที่เอามาจาก reporepository ที่ต้องการบนเว็บ github = เป็นการนำทุกไฟล์ที่เราอัพขึ้นไปบน github มาใส่ในตัวเครื่องทั้งหมด
+2.git branch ชื่อที่เราต้องการตั้ง(ชื่อใหม่) = branch เปรียบเหมือนการทำงาน ปกติเราจะทำงานอยู่ที่ master แต่เราสามารถสร้างและย้ายการทำงานได้
+3.git checkout ชื่อที่เราต้องการตั้ง(ชื่อใหม่) = การย้ายการทำงานไปที่ชื่อนั้นๆ
+4.git branch = เป็นการเช็คว่ามี branch กี่อัน และถ้า * ขึ้นอยู่ที่ branch ไหน แปลว่าเราทำงานอยู่ที่ branch นั้น
+
+การ Merge Branch
+1.แบบไม่มีการแก้ไขข้อมูลในไฟล์เดิม บรรทัดเดิมที่อยู่คนละ branch กัน (no conflict)
+  1.1.เพิ่มไฟล์ ชื่อใหม่.txt ใน branch ชื่อใหม่ โดยการ git status , git add ชื่อใหม่.txt , git commit -m
+  1.2.จากนั้นเปลี่ยน branch ไปเป็น master โดย git checkout master (ไฟล์ ชื่อใหม่่.txt หายไป)
+  1.3.เพิ่มไฟล์ master.txt ใน branch master โดยการ git status , git add master.txt , git commit -m
+  1.4.ใช้คำสั่ง git lo  g --all --decorate --oneline --graph เพื่อดู checkpoint ที่เราใส่ไว้แต่ละอัน(commit ที่เราใส่ไว้)
+  1.5.การ Merge ถ้าต้องการเปลี่ยน branch จาก ชื่อใหม่ไป master ให้เปลี่ยน branch ไปที่ masterก่อน  
+  1.6.ใช้คำสั่ง git checkout master
+  1.7.และทำการรวมไฟล์ต่าง branch โดย git merge feature
+  1.8.git push origin master = อัพขึ้นบนเว็บ github
+2.แบบมีการแก้ไขข้อมูลในไฟล์เดิม บรรทัดเดิม แต่อยู่คนละ branch กัน (conflict)
+  2.1.git checkout -b ชื่อใหม่2 = การสร้าง branch และสลับไปที่ branch ชื่อใหม่2 
+  2.2.git checkout ชื่อใหม่2 = ทำการเปลี่ยนไป branch ใหม่และ แก้ไขไฟล์ ชื่อใหม่2.txt และทำการ git status , git add ชื่อใหม่2.txt , git commit -m และgit log --all --decorate --oneline --graph
+  2.3.ทำการเปลี่ยน branch ไป master และทำการแก้ไขไฟล์บรรทัดเดิมกับ 2.2 แต่ให้ข้อความแตกต่างกัน และทำแบบ ข้อ 2.2
+  2.4.ทำการ merge ไปที่ branch master
+  2.5.แก้ไข conflict โดยการ เปิดไฟล์ b.txt ใน master และจะมี editor ในการช่วยการแก้ไข
+  2.6.ทำการ git add , git status , git commit -m
+  2.7.git push origin master = อัพขึ้นบนเว็บ github
+
+การ Pull
+1.git clone ลิงค์ ชื่อ directory =  ไปไว้อีกเครื่องหนึ่ง หรือ directory ใหม่ 
+2.cd ชื่อ directory ใหม่
+3.เพิ่มไฟล์ neww.txt ใน  directory ใหม่ แล้ว push 
+4.ทำการ pull ที่ directory เก่าโดย cd directory ใหม่ , 
+5.git pull origin master = คือการดึงไฟล์จาก branch master มาใส่ directory เก่า
+6.ls -l เกิดไฟล์ neww.txt
+
+การ Pull แบบมี conflict
+1.แก้ไขข้อมูลใน neww.txt ในในเครื่องใหม่ หรือ directory ใหม่  และcommit , push ไปที่ github
+2.แก้ไขข้อมูลบรรทัดเดียวกับข้อ 1 neww.txt ในเครื่องเก่า
+3.git status,git add, git commit , git log adog, git pull ,git status 
+4.เกิด conflict ให้แก้ก่อน แล้วจึง add  , status , commit , log adog
+5.git push ได้
+6.ไปที่เครื่องใหม่แล้ว git pull
